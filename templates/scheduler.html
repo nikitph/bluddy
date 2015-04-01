@@ -1,0 +1,13 @@
+{% extends "basetemplate.html" %}
+{% block content %}
+     <div id="date-picker">
+
+    <input id="date" type="text" class="date-input"/>
+           <label for="date">Date</label>
+  </div>
+    <script type="text/javascript">
+        $(function () {
+            $('.date-input').pickadate();
+        });
+    </script>
+{% endblock %}

@@ -20,7 +20,12 @@ def contact_us_form_post():
     email.emailer('alpha@nikitph.com', 'nikitph@gmail.com', request.form['email'], request.form['message'])
     return render_template('confirmation.html', message='Successfully sent')
 
+@app.route('/scheduler')
+def scheduler_form():
+    return render_template('scheduler.html')
 
 
 if __name__ == '__main__':
     app.run()
+
+# TODO insert some logging in here.
