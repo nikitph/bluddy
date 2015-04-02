@@ -1,13 +1,28 @@
 {% extends "basetemplate.html" %}
 {% block content %}
-     <div id="date-picker">
 
-    <input id="date" type="text" class="date-input"/>
-           <label for="date">Date</label>
-  </div>
-    <script type="text/javascript">
-        $(function () {
-            $('.date-input').pickadate();
-        });
-    </script>
+    <form class="col s12" action="/scheduler" method="post">
+        <div class="row">
+            <h5 class="">Please use this form to enter your message</h5>
+
+            <div class="input-field col s6 z-depth-1">
+                <input id="date" type="text" class="datepicker" name="date"/>
+                <label for="date">Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6 z-depth-1">
+                <input id="time" type="text" class="timepicker" name="time"/>
+                <label for="time">Time</label>
+            </div>
+        </div>
+
+        <button class="btn waves-effect waves-light light-blue darken-2" type="submit" name="action" value="Send">Submit
+            <i class="mdi-content-send right"></i>
+        </button>
+    </form>
+    <div id="date-picker">
+
+
+    </div>
 {% endblock %}

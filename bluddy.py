@@ -24,6 +24,12 @@ def contact_us_form_post():
 def scheduler_form():
     return render_template('scheduler.html')
 
+@app.route('/scheduler', methods=['POST'])
+def scheduler_form_post():
+    email = EmailAssistant()
+    email.emailer('alpha@nikitph.com', 'nikitph@gmail.com', request.form['date'], request.form['time'])
+    return render_template('scheduler.html')
+
 
 if __name__ == '__main__':
     app.run()
