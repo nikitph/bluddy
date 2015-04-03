@@ -3,6 +3,7 @@ from emailassistant import EmailAssistant
 import simplejson as json
 from couchdb.design import ViewDefinition
 import flaskext.couchdb
+from flask.ext.login import LoginManager
 from datetime import datetime
 from valuetypes import Appointments
 import strftime
@@ -72,6 +73,8 @@ if __name__ == "__main__":
     manager.setup(app)
     manager.add_viewdef(occupied_dates)
     manager.sync(app)
+    login_manager = LoginManager()
+    login_manager.init_app(app)
     app.run(host='127.0.0.1', port=5000)
 
     # TODO insert some logging in here.
