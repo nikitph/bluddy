@@ -1,31 +1,58 @@
 {% extends "basetemplate.html" %}
 {% block content %}
+    <div class="container">
+        <form action="/contactus" method="post">
+            <div class="section">
 
-        <div class="row">
-            <form class="col s12" action="/contactus" method="post">
-                <div class="row">
-                    <h5 class="">Please use this form to enter your message</h5>
 
-                    <div class="input-field col s6 z-depth-1">
-                        <input id="name" type="text" class="validate" name="name">
-                        <label for="name">Name</label>
-                    </div>
-                </div>
+                <!--   Icon Section   -->
                 <div class="row">
-                    <div class="input-field col s6 z-depth-1">
-                        <input id="email" type="email" class="validate" name="email">
-                        <label for="email">Email</label>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <p class="center green-text"><i class="mdi-communication-chat large"></i></p>
+
+                            <p class="center light">Please fill the form and click submit to send us a message</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <div class="input-field">
+                                <input id="name" type="text" class="validate" name="name">
+                                <label for="name">Name</label>
+
+                            </div>
+                            <div class="input-field">
+                                <input id="email" type="email" class="validate" name="email">
+                                <label for="email">Email</label>
+                            </div>
+
+                            <div class="input-field">
+                                <textarea id="message" class="materialize-textarea" name="message"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12 z-depth-1">
-                        <textarea id="message" class="materialize-textarea" name="message"></textarea>
-                        <label for="message">Message</label>
-                    </div>
+
+            </div>
+            <br><br>
+
+            <div class="section">
+                <div class="row center">
+                    <button class="btn-large waves-effect waves-light light-blue darken-1 z-depth-4" type="submit"
+                            name="action" value="Send">Submit
+                        <i class="mdi-content-send right"></i>
+                    </button>
                 </div>
-                <button class="btn waves-effect waves-light light-blue darken-2" type="submit" name="action" value="Send">Submit
-                    <i class="mdi-content-send right"></i>
-                </button>
-            </form>
-        </div>
+            </div>
+        </form>
+    </div>
+
 {% endblock %}

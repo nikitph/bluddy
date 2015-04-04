@@ -1,25 +1,74 @@
 {% extends "basetemplate.html" %}
 {% block content %}
 
-    <form class="col s12" action="/scheduler" method="post">
-        <div class="row">
-            <h5 class="">Please use this form to enter your message</h5>
+    <div class="container">
+        <form action="/scheduler" method="post">
+            <div class="section">
 
-            <div class="input-field col s6 z-depth-1">
-                <input id="date" type="text" class="datepicker" name="date"/>
-                <label for="date">Date</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6 z-depth-1">
-                <input id="time" type="text" class="timepicker" name="time"/>
-                <label for="time">Time</label>
-            </div>
-        </div>
 
-        <button class="btn waves-effect waves-light light-blue darken-2" type="submit" name="action" value="Send">Submit
-            <i class="mdi-content-send right"></i>
-        </button>
-    </form>
-    {{ data }}
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <p class="center green-text"><i class="mdi-action-alarm large"></i></p>
+
+                            <p class="center light">Please fill the form and click submit to schedule your
+                                appointment</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <div class="input-field">
+                                <input id="name" type="text" class="validate" name="name">
+                                <label for="name">Name</label>
+
+                            </div>
+                            <div class="input-field">
+                                <input id="email" type="email" class="validate" name="email">
+                                <label for="email">Email</label>
+                            </div>
+
+                            <div class="input-field">
+                                <input id="phone" type="text" class="validate" name="phone">
+                                <label for="phone">Telephone number</label>
+
+                            </div>
+
+                            <div class="input-field">
+                                <textarea id="address" class="materialize-textarea" name="address"></textarea>
+                                <label for="address">Address</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <div class="input-field">
+                                <input id="date" type="text" class="datepicker" name="date"/>
+                                <label for="date">Date</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="time" type="text" class="timepicker" name="time"/>
+                                <label for="time">Time</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br><br>
+
+            <div class="section">
+                <div class="row center">
+                    <button class="btn-large waves-effect waves-light light-blue darken-1 z-depth-4" type="submit"
+                            name="action" value="Send">Submit
+                        <i class="mdi-content-send right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
 {% endblock %}

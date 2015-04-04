@@ -1,15 +1,36 @@
 {% extends "basetemplate.html" %}
 {% block content %}
-        <div class="row" style="width: 100px;
-    height: 100px;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    <div class="container">
+        <div class="section">
 
-    margin: auto;">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center green-text"><i class="mdi-action-done-all"></i></h2>
+                    </div>
+                </div>
 
-            <h4>  {{ message }} </h4>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h4 class="light center">{{ message }}</h4>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <br><br>
+
+        <div class="section">
+            <div class="row center">
+                <a href="/" id="download-button"
+                   class="btn-large waves-effect waves-light light-blue darken-1 z-depth-4">Go to Home Page</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
